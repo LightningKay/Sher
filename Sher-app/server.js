@@ -19,6 +19,8 @@ app.use("/api/auth", authRoutes);
 
 const server = http.createServer(app);
 
+console.info('Connecting to DB...');
+
 mongoose
     .connect(process.env.MONGO_URI)
     .then(()=> {

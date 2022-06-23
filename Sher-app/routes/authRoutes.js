@@ -3,6 +3,7 @@ const router = express.Router();
 const authControllers = require('../controllers/auth/authControllers');
 const Joi = require('joi');
 const validator = require('express-joi-validation').createValidator({});
+const auth = require('../middleware/auth');
 
 const registerValidatorSchema = Joi.object({
     username: Joi.string().min(3).max(12).required(),
@@ -18,5 +19,9 @@ const loginValidatorSchema = Joi.object({
 
 router.post('/register', validator.body(registerValidatorSchema), authControllers.controllers.postRegister);
 router.post('/login', validator.body(loginValidatorSchema), authControllers.controllers.postLogin);
+
+router.get('/test', auth, (req, res)=>{
+    res.send('Request passed');
+});
 
 module.exports = router;
