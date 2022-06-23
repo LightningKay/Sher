@@ -25,13 +25,24 @@ const postRegister = async  (req, res) => {
         });
 
         // create JSON WEB TOKEN
-        const token = 'JWT TOKEN';
+        const token = jwt.sign(
+            {
+                userId : user._id, // This is automatically generated in mongoDB
+                mail : user.mail,
+            },
+            process.env.TOKEN_KEY,
+            {
+                expiresIn : "24h",
+            }
+        );
 
         // Send the resposne back
         res.status(201).json({
-            mail: user.mail,
-            username: user.username,
-            token: token
+            userDetails : {
+                mail: user.mail,
+                username: user.username,
+                token: token
+            }
         });
 
     } catch(err){
