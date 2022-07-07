@@ -18,6 +18,7 @@ const postRegister = async  (req, res) => {
 
 
         console.info('Creating new User');
+
         const user = await User.create({
             username,
             mail: mail.toLowerCase(),
@@ -31,9 +32,10 @@ const postRegister = async  (req, res) => {
                 mail : user.mail,
             },
             process.env.TOKEN_KEY,
-            {
+            // Keeping all tokens valid with no time restriction
+           /* {
                 expiresIn : "24h",
-            }
+            }*/
         );
 
         // Send the resposne back

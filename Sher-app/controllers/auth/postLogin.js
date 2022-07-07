@@ -17,9 +17,10 @@ const postLogin = async (req, res) => {
                     mail : user.mail,
                 },
                 process.env.TOKEN_KEY,
-                {
+                // Doesn't expire
+                /*{
                     expiresIn : "24h",
-                }
+                }*/
             );
 
             return res.status(200).json({

@@ -1,8 +1,11 @@
 import React from 'react';
-import AuthBox from '../Shared/AuthBox'
+import AuthBox from '../Shared/AuthBox';
+import LoginPageHeader from './LoginPageHeader';
 const LoginPage = () => {
     return (
-        <AuthBox>Login Page</AuthBox>
+        <AuthBox>
+            <LoginPageHeader/>
+        </AuthBox>
     );
 };
 
