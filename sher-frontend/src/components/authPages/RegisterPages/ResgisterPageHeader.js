@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
-const LoginPageHeader = () => {
+const RegisterPageHeader = () => {
     return (
        <>
         <Box sx={{ padding : '30px'}}>
@@ -9,11 +9,11 @@ const LoginPageHeader = () => {
                 Welcome to 
             </Typography>
             <Typography variant="h6" sx={{color : 'white', fontFamily : 'Segoe UI Symbol'}}>
-                Login to proceed
+                Register to proceed
             </Typography>
         </Box>
       </>
     );
 }
 
-export default LoginPageHeader;
+export default RegisterPageHeader;

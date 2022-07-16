@@ -3,7 +3,7 @@ import { TextField, Button, Link } from '@mui/material';
 import { Box } from '@mui/system';
 import { useHistory, useNavigate } from 'react-router-dom';
 
-const LoginPageInputs = ({mail, setMail, password, setPassword, isFormValid}) => {
+const RegisterPageInputs = ({mail, setMail, password, setPassword, isFormValid}) => {
     const navigate = useNavigate();
 
     const handleMailChange = (event) => {
@@ -29,7 +29,14 @@ const LoginPageInputs = ({mail, setMail, password, setPassword, isFormValid}) =>
                 <TextField
                     value = {mail}
                     required
-                    label="User Name"
+                    label="E-Mail"
+                    onChange={handleMailChange}
+                    sx={{ input : {color : 'white'} ,fullWidth : 'true', fontFamily : 'Segoe UI Symbol', m : 1}}/>
+
+                <TextField
+                    value = {mail}
+                    required
+                    label="User name"
                     onChange={handleMailChange}
                     sx={{ input : {color : 'white'} ,fullWidth : 'true', fontFamily : 'Segoe UI Symbol', m : 1}}/>
 
@@ -49,12 +56,9 @@ const LoginPageInputs = ({mail, setMail, password, setPassword, isFormValid}) =>
                           '&:hover' : {color : 'white'},
                            m : 1 }}>Login
                 </Button>
-
-                <Link sx={{color : 'black', m : 1,  '&:hover' : {color : 'white'}}}
-                      onClick={redirectToRegisterPage}>New User</Link>
             </Box>
         </div>
     );
 };
 
-export default LoginPageInputs;
+export default RegisterPageInputs;

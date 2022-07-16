@@ -1,9 +1,13 @@
 import React from 'react';
 import AuthBox from '../Shared/AuthBox'
-
+import RegisterPageHeader from './ResgisterPageHeader';
+import RegisterPageInputs from './RegisterPageInputs';
 const RegisterPage = () => {
     return (
-        <AuthBox>Register Page</AuthBox>
+        <AuthBox>
+            <RegisterPageHeader/>
+            <RegisterPageInputs/>
+        </AuthBox>
     );
 };
 
